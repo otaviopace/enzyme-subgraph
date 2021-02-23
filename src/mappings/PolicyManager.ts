@@ -61,13 +61,13 @@ export function handlePolicyDisabledForFund(event: PolicyDisabledForFund): void 
   let fundId = comptroller.getVaultProxy().toHex();
   let policy = usePolicy(event.params.policy.toHex());
 
-  let enabled = new PolicyDisabledForFundEvent(genericId(event));
-  enabled.fund = fundId;
-  enabled.account = useAccount(event.transaction.from.toHex()).id;
-  enabled.timestamp = event.block.timestamp;
-  enabled.transaction = ensureTransaction(event).id;
-  enabled.policy = policy.id;
-  enabled.save();
+  let disabled = new PolicyDisabledForFundEvent(genericId(event));
+  disabled.fund = fundId;
+  disabled.account = ensureAccount(event.transaction.from, event).id;
+  disabled.timestamp = event.block.timestamp;
+  disabled.transaction = ensureTransaction(event).id;
+  disabled.policy = policy.id;
+  disabled.save();
 
   trackPolicySettingDisabled(fundId, policy);
 }
