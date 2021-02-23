@@ -5648,13 +5648,23 @@
       ]
     },
     "FundActionsWrapper": {
-      "address": "0xf640A2763bfdE34D1e00ECCa322B0286233F6775",
+      "address": "0x911aDc86Ed1C918BCBEE01bAB157B6a843cB6143",
       "abi": [
         {
           "inputs": [
             {
               "internalType": "address",
               "name": "_feeManager",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_weth",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_paraswap",
               "type": "address"
             }
           ],
@@ -5683,6 +5693,45 @@
             }
           ],
           "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_comptrollerProxy",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "_buyer",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minSharesQuantity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_paraswapData",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint256",
+              "name": "_minInvestmentAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "exchangeAndBuyShares",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "sharesReceivedAmount_",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "payable",
           "type": "function"
         },
         {
@@ -5734,6 +5783,10 @@
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
+        },
+        {
+          "stateMutability": "payable",
+          "type": "receive"
         }
       ]
     },
