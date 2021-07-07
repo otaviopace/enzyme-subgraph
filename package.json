@@ -38,8 +38,8 @@
   "devDependencies": {
     "@chainlink/contracts": "^0.1.7",
     "@enzymefinance/protocol": "^2.0.6",
-    "@graphprotocol/graph-cli": "^0.20.0",
-    "@graphprotocol/graph-ts": "^0.20.0",
+    "@graphprotocol/graph-cli": "https://github.com/graphprotocol/graph-cli#otavio/update-assembly-script",
+    "@graphprotocol/graph-ts": "https://github.com/graphprotocol/graph-ts#otavio/update-assembly-script",
     "@openzeppelin/contracts": "^4.1.0",
     "@types/glob": "^7.1.3",
     "@types/node": "^15.6.1",
